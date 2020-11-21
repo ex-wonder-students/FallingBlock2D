@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
 {
     private float TimeLimit;
+    public Text TimerText;
 
     // Start is called before the first frame update
     void Start()
@@ -22,5 +24,6 @@ public class GameOver : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
         }
+        TimerText.text ="TIME:"+ TimeLimit.ToString("f1");
     }
 }
