@@ -5,11 +5,12 @@ public class Player : MonoBehaviour
 {
     public Text ScoreText;
     private int Score;
+    public GameObject ClearText;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        ClearText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -32,6 +33,10 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag=="Falls" )
         {
             Score += 1000;
+            if(Score==5000)
+            {
+                ClearText.SetActive(true);
+            }
         }
     }
 }
